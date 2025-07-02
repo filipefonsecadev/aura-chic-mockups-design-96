@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ChicAura E-commerce Design System - Elegant Fashion Brand */
+
+@layer base {
+  :root {
+    /* Brand Colors - Feminine & Elegant Palette */
+    --background: 350 20% 99%;
+    --foreground: 340 15% 15%;
+    
+    /* Primary Brand Colors */
+    --primary: 340 45% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 340 40% 85%;
+    --primary-dark: 340 50% 45%;
+    
+    /* Secondary Colors */
+    --secondary: 25 30% 95%;
+    --secondary-foreground: 340 15% 25%;
+    --accent: 45 55% 88%;
+    --accent-foreground: 340 15% 25%;
+    
+    /* Neutral Palette */
+    --muted: 340 10% 96%;
+    --muted-foreground: 340 8% 50%;
+    --card: 0 0% 100%;
+    --card-foreground: 340 15% 15%;
+    
+    /* Interactive Elements */
+    --border: 340 15% 90%;
+    --input: 340 15% 92%;
+    --ring: 340 45% 65%;
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Popover & Components */
+    --popover: 0 0% 100%;
+    --popover-foreground: 340 15% 15%;
+    
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 340 15% 8%;
+    --foreground: 350 20% 95%;
+    --primary: 340 45% 70%;
+    --primary-foreground: 340 15% 8%;
+    --secondary: 340 10% 15%;
+    --secondary-foreground: 350 20% 95%;
+    --muted: 340 10% 12%;
+    --muted-foreground: 340 8% 65%;
+    --card: 340 15% 10%;
+    --card-foreground: 350 20% 95%;
+    --border: 340 15% 20%;
+    --input: 340 15% 18%;
+    --ring: 340 45% 70%;
+    --popover: 340 15% 10%;
+    --popover-foreground: 350 20% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  /* Brand gradients */
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(340 45% 65%), hsl(25 55% 78%));
+  }
+  
+  .gradient-subtle {
+    background: linear-gradient(180deg, hsl(350 20% 99%), hsl(340 10% 96%));
+  }
+  
+  .gradient-hero {
+    background: linear-gradient(135deg, hsl(340 45% 65% / 0.1), hsl(25 55% 78% / 0.1));
+  }
+
+  /* Custom shadows */
+  .shadow-elegant {
+    box-shadow: 0 10px 40px -10px hsl(340 45% 65% / 0.15);
+  }
+  
+  .shadow-soft {
+    box-shadow: 0 4px 20px -4px hsl(340 15% 25% / 0.1);
+  }
+  
+  .shadow-button {
+    box-shadow: 0 2px 10px -2px hsl(340 45% 65% / 0.2);
+  }
+
+  /* Animation utilities */
+  .fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px -8px hsl(340 45% 65% / 0.25);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
